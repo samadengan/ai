@@ -9,22 +9,188 @@
 <link rel="stylesheet" href="css/jquery.mobile.structure-1.4.5.min.css" />
 <script src="js/jquery-1.11.1.min.js"></script>
 <script src="js/jquery.mobile-1.4.5.min.js"></script>
+<script 
+
+type="text/javascript">
+
+
+
+var selectedtablink=""
+var tcischecked=false
+
+function handlelink
+
+(aobject){
+selectedtablink=aobject.hre
+
+f
+tcischecked=
+
+(document.tabcontrol && 
+
+document.tabcontrol.tabchec
+
+k.checked)? true : false
+if (document.getElementById 
+
+&& !tcischecked){
+var 
+
+tabobj=document.getElementB
+
+yId("tablist")
+var 
+
+tabobjlinks=tabobj.getEleme
+
+ntsByTagName("A")
+for (i=0; 
+
+i<tabobjlinks.length; i++)
+tabobjlinks[i].className=""
+aobject.className="current"
+document.getElementById
+
+("tabiframe").src=selectedt
+
+ablink
+return false
+}
+else
+return true
+}
+
+function handleview(){
+tcischecked=document.tabcon
+
+trol.tabcheck.checked
+if (document.getElementById 
+
+&& tcischecked){
+if (selectedtablink!="")
+window.location=selectedtab
+
+link
+}
+}
+
+</script>
 </head>
 <body>
 
 <div data-role="page" id="pageone">
-  <div data-role="header">
-    <h1>Insert Page Title Here</h1>
-  </div>
+ <div data-role="header" 
+
+style="overflow:hidden;">
+<h1>I'm a header</h1>
+    <a 
+
+href="javascript:jumpto
+
+('https://m.facebook.com/aieB4mz1/albums/882127601869898/')"" data-
+
+icon="gear" class="ui-btn-
+
+right">Options</a>
+    <div data-
+
+role="navbar">
+        <ul>
+            <li><a 
+
+href="#">One</a></li>
+            <li><a 
+
+href="#">Two</a></li>
+            <li><a 
+
+href="#">Three</a></li>
+        </ul>
+    </div><!-- /navbar -->
+</div><!-- /header -->
 
   <div data-role="main" class="ui-content">
     <p>Insert Content Here</p>
   </div>
 
-  <div data-role="footer">
-    <h1>Insert Footer Text Here</h1>
-  </div>
-</div> 
+  <script 
 
+language="javascript">
+
+<!--
+
+//Specify display mode (0 
+
+or 1)
+//0 causes document to be 
+
+displayed in an inline 
+
+frame, while 1 in a new 
+
+browser window
+var displaymode=0
+//if displaymode=0, 
+
+configure inline frame 
+
+attributes (ie: dimensions, 
+
+intial document shown
+var iframecode='<iframe 
+
+id="external" 
+
+style="width:98%;height:550
+
+px" 
+
+src="http://www.yahoo.com">
+
+</iframe>'
+
+/////NO NEED TO EDIT BELOW 
+
+HERE////////////
+
+if (displaymode==0)
+document.write(iframecode)
+
+function jumpto(inputurl){
+if 
+
+(document.getElementById&&d
+
+isplaymode==0)
+document.getElementById
+
+("external").src=inputurl
+else if 
+
+(document.all&&displaymode=
+
+=0)
+document.all.external.src=i
+
+nputurl
+else{
+if (!window.win2||
+
+win2.closed)
+win2=window.open(inputurl)
+//else if win2 already 
+
+exists
+else{
+win2.location=inputurl
+win2.focus()
+}
+}
+}
+</script>
+
+<div data-role="footer">
+    <h1>Footer Text</h1>
+  </div>
 </body>
 </html>
