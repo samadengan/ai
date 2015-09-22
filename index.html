@@ -1,25 +1,30 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<!DOCTYPE html>
 <html>
 <head>
-	<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
-	<meta name="robots" content="noindex,follow">
-	<script src="../lib/jquery.js" type="text/javascript"></script>
-	<script src="sample.js" type="text/javascript"></script>
-	<title>New GBHN</title>
+  <!-- Include meta tag to ensure proper rendering and touch zooming -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Include jQuery Mobile stylesheets -->
+  <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+  <!-- Include the jQuery library -->
+  <script src="js/jquery-1.11.3.min.js"></script>
+  <!-- Include the jQuery Mobile library -->
+  <script src="js/jquery.mobile-1.4.5.min.js"></script>
 </head>
-<frameset rows="50,1*" frameborder="no" framespacing="0">
-	<frame src="top.html" name="top" scrolling="NO" noresize
-		marginwidth="0" marginheight="0">
-	<frameset cols="200,1*" >
-		<frame src="re.html" name="nav" scrolling="YES"
-			marginwidth="0" marginheight="0">
-		<frame src="ulo.html" name="content">
-	</frameset>
-</frameset>
+<body>
 
-<noframes>
-	<body>
-		<p>This page requires frames.</p>
-	</body>
-</noframes>
+<div data-role="page" id="pageone">
+  <div data-role="header">
+    <h1>Insert Page Title Here</h1>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <p>Insert Content Here</p>
+  </div>
+
+  <div data-role="footer">
+    <h1>Insert Footer Text Here</h1>
+  </div>
+</div> 
+
+</body>
 </html>
