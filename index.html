@@ -1,27 +1,57 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
-<html>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Include jQuery Mobile stylesheets -->
-  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
-  <!-- Include the jQuery library -->
-  <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-  <!-- Include the jQuery Mobile library -->
-  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-	<title></title>
-
+    <title></title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.fb.albumbrowser.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/jquery.fb.albumbrowser.css" />
 </head>
 
-	<frameset cols="150,1*" >
-		<frame src="nav.html" name="nav" scrolling="YES"
-			marginwidth="0" marginheight="0">
-		<frame src="https://m.facebook.com/aieB4mz1/albums/882127601869898/" name="content">
-	</frameset>
-</frameset>
-
-<noframes>
-	<body>
-		<p>This page requires frames.</p>
-	</body>
-</noframes>
+<body>
+    <div class="fb-album-container" data-album="10150310813623951"></div>
+    <div class="fb-album-container" data-album="10150925811608951"></div>
+    <div class="fb-album-container" data-album="10150432660808951"></div>
+    
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".fb-album-container").each(function () {
+                $(this).FacebookAlbumBrowser({
+                    account: "natgeo",
+                    accessToken: "775908159169504|cYEIsh0rs25OQQC8Ex2hXyCOut4",
+                    //skipAlbums: ["Profile Pictures", "Timeline Photos"],
+                    //includeAlbums: ["Profile Pictures", "Timeline Photos"],
+                    onlyAlbum: $(this).attr("data-album"),
+                    showComments: true,
+                    commentsLimit: 3,
+                    showAccountInfo: true,
+                    showImageCount: true,
+                    showImageText: true,
+                    shareButton: false,
+                    albumsPageSize: 0,
+                    photosPageSize: 0,
+                    lightbox: true,
+                    photosCheckbox: true,
+					pluginImagesPath: "../src/",
+                    likeButton: true,
+                    shareButton: true,
+                    addThis: "ra-52638e915dd79612",
+                    photoChecked: function (photo) {
+                        console.log("PHOTO CHECKED: " + photo.id + " - " + photo.url + " - " + photo.thumb);
+                        console.log("CHECKED PHOTOS COUNT: " + this.checkedPhotos.length);
+                    },
+                    photoUnchecked: function (photo) {
+                        console.log("PHOTO UNCHECKED: " + photo.id + " - " + photo.url + " - " + photo.thumb);
+                        console.log("CHECKED PHOTOS COUNT: " + this.checkedPhotos.length);
+                    },
+                    albumSelected: function (photo) {
+                        console.log("ALBUM CLICK: " + photo.id + " - " + photo.url + " - " + photo.thumb);
+                    },
+                    photoSelected: function (photo) {
+                        console.log("PHOTO CLICK: " + photo.id + " - " + photo.url + " - " + photo.thumb);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
 </html>
